@@ -1,0 +1,22 @@
+[alias]
+	st = status
+	br = branch
+	co = checkout
+	ci = commit
+	df = diff
+	ad = add
+	mkbr = branch
+	rmbr = branch -d
+	rmbrd  = branch -D
+	mvbr = branch -m
+	today = log --oneline --since='12 hour ago'
+	
+	#log関連
+	log-grach = log --graph --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s'
+	log-all = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
+	
+	# mergeの際にconflictが起きたファイルを編集
+	edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
+	
+	# mergeの際にconflictが起きたファイルをadd
+	add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
