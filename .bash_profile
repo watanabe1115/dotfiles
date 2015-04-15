@@ -8,7 +8,7 @@ if [ `uname` = "Darwin" ]; then
 
 	source $(brew --prefix nvm)/nvm.sh
 
-elif [ `uname` = "MINGW32_NT-6.1" ]; then
+elif [ `uname` = "MINGW32_NT-6.1" -o `uname` = "MINGW32_NT-6.2" ]; then
 
 	#ssh-agent
 	eval `cat /var/ssh-agent.out`
