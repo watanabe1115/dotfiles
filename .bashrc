@@ -28,7 +28,7 @@ if [ `uname` = "Darwin" ]; then
 
 	PS1='\[\e]0;:\u@\h \w\a\]\n\[\e[0;36m\]\w\[\e[0;33m\]$(__git_ps1)\[\e[0;00m\] \$ '
 
-elif [ `uname` = "MINGW32_NT-6.1" ]; then
+elif [ `uname` = "MINGW32_NT-6.1" -o `uname` = "MINGW32_NT-6.2" ]; then
 
 	PS1='\[\e]0;MINGW32:\u@\h \w\a\]\n\[\e[0;36m\]\w\[\e[0;33m\]$(__git_ps1)\[\e[0;00m\] \$ '
 
