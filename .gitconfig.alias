@@ -11,17 +11,18 @@
 	rmbrd  = branch -D
 	mvbr = branch -m
 	today = log --oneline --since='12 hour ago'
-	
+	cp = cherry-pick
+
 	#log関連
 	log-grach = log --graph --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s'
 	log-all = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
-	
+
 	# mergeの際にconflictが起きたファイルを編集
 	edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
-	
+
 	# mergeの際にconflictが起きたファイルをadd
 	add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
-	
+
 	# aliasを確認するalia
 	alias = !"if test -z $1; then loop=; for k in `git config --get-regexp ^alias\\. | sort | sed -e 's/^alias\\.\\(\\S*\\).*/\\1/g'`; do echo -n $k; loop="${loop}1"; if test ${#loop} -lt 5; then echo -n '\t'; else echo; loop=; fi; done; exit; fi; git config --list | grep ^alias\\.$1= | sed -e s/^alias\\.//; exit;"
 
