@@ -5,7 +5,8 @@
 	ci = commit
 	df = diff
 	ad = add
-	rb = rebase -i
+	rb = rebase
+	rbi = rebase -i
 	mkbr = branch
 	rmbr = branch -d
 	rmbrd  = branch -D
