@@ -11,7 +11,7 @@ elif [ `uname` = "Darwin" ]; then
 	## mac
 
 	# nvm
-	source $(brew --prefix nvm)/nvm.sh
+	source ~/.nvm/nvm.sh
 
 fi
 
