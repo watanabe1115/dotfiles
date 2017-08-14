@@ -13,6 +13,13 @@
 	mvbr = branch -m
 	today = log --oneline --since='12 hour ago'
 	cp = cherry-pick
+	rp = remote prune
+	sh = stash save
+	sha = stash -a save
+	shp = stash pop
+	shd = stash drop
+	shl = stash list
+	mktag = tag -a
 
 	#log関連
 	log-grach = log --graph --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s'
