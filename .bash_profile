@@ -1,13 +1,13 @@
 export LS_COLORS="${LS_COLORS}:di=01;36"
 
-if [ $(echo `uname` | grep -e 'MINGW') ]; then
-	## Windows
+if [ "$(expr substr $(uname -s) 1 5)" == 'MINGW' ]; then
+	## Git Bash
 
 	# ssh-agent
 	eval `cat /var/ssh-agent.out`
 	ssh-add ~/.ssh/github_rsa
     
-elif [ `uname` = "Darwin" ]; then
+elif [ "$(uname)" == 'Darwin' ]; then
 	## mac
 
 	# nvm
@@ -31,6 +31,11 @@ elif [ `uname` = "Darwin" ]; then
 	# ant
 	export ANT_HOME="/usr/local/bin/ant/"
 	export PATH="$PATH:$ANT_HOME/bin"
+
+elif [ "$(uname)" == 'Linux' ]; then
+      ## bash on Ubuntu on Windows
+
+      :
 fi
 
 if [ -f ~/.bashrc ] ; then
