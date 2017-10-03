@@ -47,6 +47,9 @@ elif [ ${os} == 'Darwin' ]; then
 
 elif [ ${os} == 'Linux' ]; then
 	## echo "bash on Ubuntu on Windows"
+	
+	source /usr/local/git/contrib/completion/git-prompt.sh
+	source /usr/local/git/contrib/completion/git-completion.bash
 
 	PS1='\[\e]0;:\u@\h \w\a\]\n\[\e[0;36m\]\w\[\e[0;33m\]$(__git_ps1)\[\e[0;00m\] \$ '
 
