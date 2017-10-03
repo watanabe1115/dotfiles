@@ -1,22 +1,23 @@
 export LS_COLORS="${LS_COLORS}:di=01;36"
 
-if [ "$(expr substr $(uname -s) 1 5)" == 'MINGW' ]; then
+os=$(uname)
+if [ ${os:0:5} == 'MINGW' ]; then
 	## Git Bash
 
 	# ssh-agent
 	eval `cat /var/ssh-agent.out`
 	ssh-add ~/.ssh/github_rsa
     
-elif [ "$(uname)" == 'Darwin' ]; then
+elif [ ${os} == 'Darwin' ]; then
 	## mac
 
 	# nvm
-	source ~/.nvm/nvm.sh
-	export NVM_DIR="$HOME/.nvm"
-	[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+#	source ~/.nvm/nvm.sh
+#	export NVM_DIR="$HOME/.nvm"
+#	[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
 	# nodebrew
-	#export PATH=$HOME/.nodebrew/current/bin:$PATH
+#	export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 	# adb
 	export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
@@ -32,7 +33,7 @@ elif [ "$(uname)" == 'Darwin' ]; then
 	export ANT_HOME="/usr/local/bin/ant/"
 	export PATH="$PATH:$ANT_HOME/bin"
 
-elif [ "$(uname)" == 'Linux' ]; then
+elif [ ${os} == 'Linux' ]; then
       ## bash on Ubuntu on Windows
 
       :
