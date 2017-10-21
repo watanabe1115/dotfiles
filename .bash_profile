@@ -34,9 +34,10 @@ elif [ ${os} == 'Darwin' ]; then
 	export PATH="$PATH:$ANT_HOME/bin"
 
 elif [ ${os} == 'Linux' ]; then
-      ## bash on Ubuntu on Windows
+	## bash on Ubuntu on Windows
 
-      :
+	eval `ssh-agent`
+	ssh-add ~/.ssh/github_rsa
 fi
 
 if [ -f ~/.bashrc ] ; then
