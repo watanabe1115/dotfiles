@@ -1,6 +1,9 @@
 [alias]
 	st = status
 	br = branch
+	##TODO:コマンドを直接書いて実行できるようにする
+	bra = !sh ~/.bash_script/git-branch-description.sh
+	bre = branch --edit-description
 	co = checkout
 	ci = commit
 	df = diff
