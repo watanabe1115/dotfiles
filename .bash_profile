@@ -16,11 +16,10 @@ elif [ ${os} == 'Darwin' ]; then
 #	export NVM_DIR="$HOME/.nvm"
 #	[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
-	# nodebrew
-#	export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 	# adb
 	export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
+
 	# PlantUML
 	export PATH=$PATH:$HOME/Library/PlantUML
 
@@ -32,6 +31,9 @@ elif [ ${os} == 'Darwin' ]; then
 	# ant
 	export ANT_HOME="/usr/local/bin/ant/"
 	export PATH="$PATH:$ANT_HOME/bin"
+
+	# nodebrew
+	export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 elif [ ${os} == 'Linux' ]; then
 	## bash on Ubuntu on Windows
