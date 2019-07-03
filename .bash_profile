@@ -1,20 +1,20 @@
-export LS_COLORS="${LS_COLORS}:di=01;36"
+# ============= #
+# .bash_profile #
+# ============= #
 
 os=$(uname)
 if [ ${os:0:5} == 'MINGW' ]; then
-	## Git Bash
+	echo "[Git Bash] .bash_profile"
 
-	# ssh-agent
-	eval `cat /var/ssh-agent.out`
-	ssh-add ~/.ssh/github_rsa
+	export PATH=$PATH:"/c/Program Files/Mono/bin"
     
 elif [ ${os} == 'Darwin' ]; then
-	## mac
+	echo "[Mac] .bash_profile"
 
 	# nvm
-#	source ~/.nvm/nvm.sh
-#	export NVM_DIR="$HOME/.nvm"
-#	[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+	# source ~/.nvm/nvm.sh
+	# export NVM_DIR="$HOME/.nvm"
+	# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
 
 	# adb
@@ -35,14 +35,18 @@ elif [ ${os} == 'Darwin' ]; then
 	# nodebrew
 	export PATH=$HOME/.nodebrew/current/bin:$PATH
 
-elif [ ${os} == 'Linux' ]; then
-	## bash on Ubuntu on Windows
+	export LS_COLORS="${LS_COLORS}:di=01;36"
 
-	eval `ssh-agent`
-	ssh-add ~/.ssh/github_rsa
+elif [ ${os} == 'Linux' ]; then
+	echo "[Linux] .bash_profile"
+
+	# eval `ssh-agent`
+	# ssh-add ~/.ssh/github_rsa
 fi
 
 if [ -f ~/.bashrc ] ; then
 . ~/.bashrc
 fi
 
+
+# NODIST_BIN_DIR__=$(echo "$NODIST_PREFIX" | sed -e 's,\\,/,g')/bin; if [ -f "$NODIST_BIN_DIR__/nodist.sh" ]; then . "$NODIST_BIN_DIR__/nodist.sh"; fi; unset NODIST_BIN_DIR__;
