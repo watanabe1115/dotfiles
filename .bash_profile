@@ -11,26 +11,13 @@ if [ ${os:0:5} == 'MINGW' ]; then
 elif [ ${os} == 'Darwin' ]; then
 	echo "[Mac] .bash_profile"
 
-	# nvm
-	# source ~/.nvm/nvm.sh
-	# export NVM_DIR="$HOME/.nvm"
-	# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-
-
 	# adb
 	export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
-
-	# PlantUML
-	export PATH=$PATH:$HOME/Library/PlantUML
 
 	# pyenv
 	export PYENV_ROOT="$HOME/.pyenv"
 	export PATH="$PYENV_ROOT/bin:$PATH"
 	eval "$(pyenv init -)"
-
-	# ant
-	export ANT_HOME="/usr/local/bin/ant/"
-	export PATH="$PATH:$ANT_HOME/bin"
 
 	# nodebrew
 	export PATH=$HOME/.nodebrew/current/bin:$PATH
