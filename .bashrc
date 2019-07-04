@@ -28,8 +28,16 @@ if [ ${os:0:5} == 'MINGW' ]; then
 elif [ ${os} == 'Darwin' ]; then
 	echo "[Mac] .bashrc"
 	
-	source /usr/local/git/contrib/completion/git-prompt.sh
-	source /usr/local/git/contrib/completion/git-completion.bash
+	# macOS Sierra用
+	if [ -e /usr/local/git/contrib/completion/ ]; then
+		source /usr/local/git/contrib/completion/git-prompt.sh
+		source /usr/local/git/contrib/completion/git-completion.bash
+	fi
+	# macOS Mojave用
+	if [ -e /usr/local/etc/bash_completion.d ]; then
+		source /usr/local/etc/bash_completion.d/git-prompt.sh
+		source /usr/local/etc/bash_completion.d/git-completion.bash
+	fi
 
 	alias ls='ls -G -1'
 

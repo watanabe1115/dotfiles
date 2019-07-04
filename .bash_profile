@@ -17,7 +17,9 @@ elif [ ${os} == 'Darwin' ]; then
 	# pyenv
 	export PYENV_ROOT="$HOME/.pyenv"
 	export PATH="$PYENV_ROOT/bin:$PATH"
-	eval "$(pyenv init -)"
+	if type "pyenv" > /dev/null 2>&1; then
+		eval "$(pyenv init -)"
+	fi
 
 	# nodebrew
 	export PATH=$HOME/.nodebrew/current/bin:$PATH
