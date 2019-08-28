@@ -23,6 +23,8 @@
 	shd = stash drop
 	shl = stash list
 	mktag = tag -a
+	## fuzzy checkout
+	fco = !git co $(git br | fzy)
 
 	#log関連
 	log-grach = log --graph --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s'
