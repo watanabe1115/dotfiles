@@ -23,7 +23,9 @@
 	shd = stash drop
 	shl = stash list
 	mktag = tag -a
-	## fuzzy checkout
+	
+	## fuzzy xxx
+	## http://repo.msys2.org/msys/x86_64/fzy-1.0-1-x86_64.pkg.tar.xz から直接DLして配置
 	fco = !git co $(git br | fzy)
 
 	#log関連
