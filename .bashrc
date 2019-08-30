@@ -40,6 +40,7 @@ elif [ ${os} == 'Darwin' ]; then
 	fi
 
 	alias ls='ls -G -1'
+	alias repo='cd $(ghq root)/$(ghq list | fzy)'
 
 	PS1='\[\e]0;:\u@\h \w\a\]\n\[\e[0;36m\]\w\[\e[0;33m\]$(__git_ps1)\[\e[0;00m\] \$ '
 
