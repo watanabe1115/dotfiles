@@ -2,9 +2,10 @@
 # .bash_profile #
 # ============= #
 
-# [ -f $ZDOTDIR/.zshrc_`uname` ] && . $ZDOTDIR/.zshrc_`uname`
+dir=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
 
-[ -f $DOT_FILE_DIR/`uname`/.bash_profile ] && . $DOT_FILE_DIR/`uname`/.bash_profile
+# 各環境のファイル読み込み
+[ -f $dir/`uname`/.bash_profile ] && . $dir/`uname`/.bash_profile
 
 # os=$(uname)
 # if [ ${os:0:5} == 'MINGW' ]; then

@@ -8,8 +8,10 @@ alias ll='ls -l -1'
 alias l='ls -CF'
 alias repo='cd $(ghq root)/$(ghq list | fzy)'
 
+dir=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
+
 # 各環境のファイル読み込み
-[ -f $DOT_FILE_DIR/`uname`/.bashrc ] && . $DOT_FILE_DIR/`uname`/.bashrc
+[ -f $dir/`uname`/.bashrc ] && . $dir/`uname`/.bashrc
 
 # os=$(uname)
 # if [ ${os:0:5} == 'MINGW' ]; then
