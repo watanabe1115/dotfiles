@@ -26,7 +26,12 @@
 	
 	## fuzzy xxx
 	## http://repo.msys2.org/msys/x86_64/fzy-1.0-1-x86_64.pkg.tar.xz から直接DLして配置
-	fco = !git co $(git br | fzy)
+	fco = !git co $(git br | fzy -l 20)
+	cof = !git co $(git br | fzy -l 20)
+	frmbr = !git rmbr $(git br | fzy)
+	rmbrf = !git rmbr $(git br | fzy)
+	frmbrd = !git rmbrd $(git br | fzy)
+	rmbrdf = !git rmbrd $(git br | fzy)
 
 	#log関連
 	log-grach = log --graph --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s'
