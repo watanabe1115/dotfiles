@@ -15,3 +15,6 @@ if ! ssh-add -l > /dev/null 2>&1; then
 	source $SSH_AGENT_FILE
 	ssh-add $HOME/.ssh/github_rsa
 fi
+
+# 文字化け対策
+cmd //c chcp 65001
