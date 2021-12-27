@@ -5,6 +5,8 @@
 	bra = !sh ~/.bash_script/git-branch-description.sh
 	bre = branch --edit-description
 	co = checkout
+	sw = switch
+	re = restore
 	ci = commit
 	df = diff
 	ad = add
@@ -23,11 +25,15 @@
 	shd = stash drop
 	shl = stash list
 	mktag = tag -a
+	rv = revert
+	rmbra = "!f () { git branch --merged | grep -v '*' | xargs git branch -d; };f"
 	
 	## fuzzy xxx
 	## http://repo.msys2.org/msys/x86_64/fzy-1.0-1-x86_64.pkg.tar.xz から直接DLして配置
-	fco = !git co $(git br | fzy -l 20)
-	cof = !git co $(git br | fzy -l 20)
+	fco = !echo "Used git switch or git fsw"
+	cof = !echo "Used git switch or git swf"
+	fsw = !git sw $(git br | fzy -l 20)
+	swf = !git sw $(git br | fzy -l 20)
 	frmbr = !git rmbr $(git br | fzy)
 	rmbrf = !git rmbr $(git br | fzy)
 	frmbrd = !git rmbrd $(git br | fzy)
