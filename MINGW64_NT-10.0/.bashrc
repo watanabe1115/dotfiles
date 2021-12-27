@@ -2,6 +2,8 @@ echo "[Git Bash] .bashrc"
 
 alias ls='ls --color=auto --show-control-chars -1'
 alias open='explorer'
+alias fhistory='$(history | cut -c 8- | fzy)'
+alias historyf='$(history | cut -c 8- | fzy)'
 
 PS1='\[\e]0;`uname`:\u@\h \w\a\]\n\[\e[0;36m\]\w\[\e[0;33m\]$(__git_ps1)\[\e[0;00m\] \$ '
 
@@ -17,4 +19,4 @@ if ! ssh-add -l > /dev/null 2>&1; then
 fi
 
 # 文字化け対策
-cmd //c chcp 65001
+# cmd //c chcp 65001
